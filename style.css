@@ -11,7 +11,7 @@
 
         body {
             font-family: 'Sora', sans-serif;
-            background-color: #F9FAFB; /* bg-gray-50 */
+            background-color: white; /* rosa claro para azul claro *//* bg-gray-50 */
             color: #1F2937; /* text-gray-800 */
             line-height: 1.6;
         }
@@ -24,16 +24,20 @@
             margin-right: auto;
             padding-left: 1.5rem;
             padding-right: 1.5rem;
+            
         }
 
         section {
             padding-top: 5rem;
             padding-bottom: 5rem;
+            
+            
         }
 
         /* --- Header --- */
         .header {
-            background-color: #FFFFFF;
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             position: sticky;
             top: 0;
@@ -64,6 +68,25 @@
             transition: color 0.3s;
         }
 
+        .card-content-inner {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem auto;
+            background-color: #e8eefb41; /* Light Blue */
+            color: var(--color-primary);
+            font-size: 1.5rem;
+        }
+
         .nav a:hover {
             color: #1d56d1;
         }
@@ -86,6 +109,7 @@
             text-align: center;
             padding-top: 4rem;
             padding-bottom: 4rem;
+            
         }
 
         .main-headline {
@@ -101,7 +125,7 @@
         }
 
         .main-subheadline {
-            font-size: 1.125rem;
+            font-size: 1.01rem;
             color: #4B5563;
             max-width: 48rem;
             margin: 0 auto 3rem auto;
@@ -138,8 +162,66 @@
 
         /* --- Seção Sobre Mim --- */
         #sobre {
-            background-color: #FFFFFF;
+            background:linear-gradient(180deg,#FFFFFF,rgb(235, 237, 240));
         }
+         .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 35px rgba(29, 86, 209, 0.15);
+        }
+         #tipos-site .card:hover::before {
+            opacity: 1;
+        }
+        .preview-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.7);
+        }
+         .cta-button-main:hover {
+            background-color: var(--color-primary-dark);
+        }
+         #tipos-site {
+             background-color: var(--color-white);
+        }
+        
+        #tipos-site .card {
+            overflow: hidden;
+            padding: 0;
+        }
+
+        #tipos-site .card::before {
+            content: '';
+            position: absolute;
+            z-index: 0;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background-repeat: no-repeat;
+            background-size: 50% 50%, 50% 50%;
+            background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+            background-image: linear-gradient(var(--color-gold), var(--color-gold)),
+                              linear-gradient(var(--color-primary), var(--color-primary)),
+                              linear-gradient(var(--color-gold), var(--color-gold)),
+                              linear-gradient(var(--color-primary), var(--color-primary));
+            animation: rotate 4s linear infinite;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        
+        #tipos-site .card:hover::before {
+            opacity: 1;
+        }
+
+        #tipos-site .card .card-content {
+            background-color: var(--color-white);
+            z-index: 1;
+            margin: 2px; /* Espessura da borda animada */
+            border-radius: 0.65rem;
+            height: calc(100% - 4px);
+            width: calc(100% - 4px);
+            display: flex;
+            flex-direction: column;
+        }
+
         
         .about-content {
             display: flex;
@@ -427,7 +509,10 @@
             .main-headline {
                 font-size: 2.25rem;
             }
-
+            br{
+                display:none;
+                visibility: hidden;
+            }
              #fotoeuimg{
             width: 75%;
             margin: auto;

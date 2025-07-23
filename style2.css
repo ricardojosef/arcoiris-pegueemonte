@@ -34,6 +34,7 @@
             background-image: radial-gradient(circle at 20% 20%, var(--color-background-glow), var(--color-background-light) 40%);
             color: var(--color-text-dark);
             line-height: 1.6;
+            overflow-x:hidden;
         }
 
         /* --- Estrutura e Container --- */
